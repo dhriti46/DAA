@@ -1,0 +1,19 @@
+def minmax(arr):
+    if (len(arr)==1):
+        return(arr,arr)
+    mid = len(arr)//2
+    min1,max1 = minmax (arr[:mid])
+    min2,max2 = minmax (arr[mid:])
+    if (min1<min2):
+        final_min = min1
+    else:
+        final_min = min2
+    if (max1>max2):
+        final_max = max1
+    else:
+        final_max = max2
+    return final_min , final_max
+
+
+arr=[5,7,35,2,79,35,8,2,24,57]
+print(minmax(arr))
